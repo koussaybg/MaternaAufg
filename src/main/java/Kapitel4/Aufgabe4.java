@@ -13,7 +13,7 @@ public class Aufgabe4 {
                         + "<circle cx=\"%d\" cy=\"%d\" r=\"%s\" />\n</svg>\n%n",
                 100, 100, rand );
 
-        Aufgabe135_CoinMachine();
+
 
 
     }
