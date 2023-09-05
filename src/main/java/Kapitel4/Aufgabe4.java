@@ -14,9 +14,9 @@ public class Aufgabe4 {
                 "<svg height=\"100\" width=\"1000\">\n "
                         + "<circle cx=\"%d\" cy=\"%d\" r=\"%s\" />\n</svg>\n%n",
                 100, 100, rand );
-        
 
 
+        Aufgabe142();
 
     }
 
@@ -103,5 +103,37 @@ public class Aufgabe4 {
         System.out.printf( "%d bottle%s of rum%n",
                 noOfBottles, noOfBottles != 1 ? "s" : "" );
     }
+
+    static void Aufgabe0141(){
+        System.out.println("prize of the watch :");
+        double prize= new java.util.Scanner(System.in).nextDouble() ;
+        System.out.println("Money given :");
+        double payment= new java.util.Scanner(System.in).nextDouble() ;
+        if(payment>prize*1.20 || payment<prize*0.90) System.out.println("You son of a bi***!") ;
+                                                else System.out.println("Good boy!");
+    }
+
+    static void Aufgabe142(){
+        System.out.println("Enter quantity in liters:\n");
+        double quantity= new java.util.Scanner(System.in).nextDouble() ;
+        if(quantity>1.0)  {
+            System.out.printf("approx. %d l" ,(int)quantity);
+            return;
+        }
+        if(quantity>0.1)  {
+            System.out.printf("approx. %.0f cl" ,quantity*100);
+            return;
+        }
+        if (quantity>0.01){
+            System.out.printf("approx. %.0f ml" ,quantity*1000);
+            return;
+        }
+        System.out.println("Value too small to display");
+
+
+
+
+    }
+
 
 }
