@@ -78,7 +78,7 @@ public class Aufgabe4 {
                 number1_2==number2_2 ;
     }
 
-    static void Aufgabe135_CoinMachine(){
+    static void Aufgabe134_CoinMachine(){
     // this is the change making problem : the Greedy Solution is not the Optimal one !
         System.out.println( "Please enter amount of money: :" );
         double number = new java.util.Scanner( System.in ).nextDouble();
@@ -93,8 +93,7 @@ public class Aufgabe4 {
         System.out.printf ("%d x 2 Lirettacent %n",numberToCent/2);numberToCent=numberToCent%2;
         System.out.printf ("%d x 1 Lirettacent %n",numberToCent);
 
-
-
     }
+
 
 }
