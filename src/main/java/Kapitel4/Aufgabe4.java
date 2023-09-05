@@ -1,7 +1,9 @@
 package Kapitel4;
 
+import java.sql.SQLOutput;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Aufgabe4 {
     public static void main(String[] args) {
@@ -12,7 +14,7 @@ public class Aufgabe4 {
                 "<svg height=\"100\" width=\"1000\">\n "
                         + "<circle cx=\"%d\" cy=\"%d\" r=\"%s\" />\n</svg>\n%n",
                 100, 100, rand );
-
+        
 
 
 
@@ -95,5 +97,11 @@ public class Aufgabe4 {
 
     }
 
+    static void Aufgabe135_grammar(){
+        System.out.println("Please enter amount of Bottles:");
+        int noOfBottles = new Scanner(System.in).nextInt();
+        System.out.printf( "%d bottle%s of rum%n",
+                noOfBottles, noOfBottles != 1 ? "s" : "" );
+    }
 
 }
