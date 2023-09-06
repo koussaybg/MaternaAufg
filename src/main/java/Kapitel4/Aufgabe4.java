@@ -17,7 +17,7 @@ public class Aufgabe4 {
 //                100, 100, rand );
 
 
-        Aufgabe155();
+        Aufgabe159();
 
     }
 
@@ -193,11 +193,11 @@ public class Aufgabe4 {
 
     }
     static void Aufgabe155(){
-        int input=new java.util.Scanner(System.in).nextInt() ;
-        int summe=1 ;
+        long input=new java.util.Scanner(System.in).nextInt() ;
+        long summe=1 ;
         if (input>=0){
-            for (int i = input; i > 0; i--) {
-                summe*=input-- ;
+            for (long i = input; i > 0; i--) {
+                summe=Math.multiplyExact(summe,input--) ;
             }
             System.out.println(summe);
         }
@@ -205,8 +205,67 @@ public class Aufgabe4 {
 
     }
 
+    static void Aufgabe156(){
+        long input=new java.util.Scanner(System.in).nextInt() ;
+        long Originalinput=input ;
+        int factor= 0;
+        while (input>1){
+            if (input%++factor==0 && input>=factor){
+                input/=factor ;
+
+            }
+            else {
+                System.out.printf("%d is not a factorial",Originalinput);
+                return;
+            }
+        }
+        System.out.printf("%d!",factor);
+    }
+
+    static void Aufgabe157(){
+        long input=new java.util.Scanner(System.in).nextLong() ;
+        long min=9,max=-1 ; // should be Math.MAX_INTEGER for min ,
+        while (input!=0){
+            min = Math.min(input % 10, min);
+            max = Math.max(input%10,max) ;
+            input/=10 ;
+        }
+        System.out.printf("%d,%d",min,max);
+    }
+
+    static void Aufgabe158() {
+        int input = new java.util.Scanner(System.in).nextInt();
+        for (int i = 1; i < input; i++) {
+            for (int index = 0; index < (input - i); index++)
+                System.out.print(" ");
+            for (int j = 0; j < i; j++) {
+                System.out.printf("%d", i);
+            }
+            System.out.println();
+        }
+    }
+    static void Aufgabe159(){
+        System.out.println("Checkerboard width :");
+        int width = new java.util.Scanner(System.in).nextInt();
+        System.out.println("Checkerboard height :");
+        int height = new java.util.Scanner(System.in).nextInt();
+        String line="";
+        for (int i = 1; i <= height; i++) {
+            for (int j = 1; j <= width; j++) {
+                if (i%2==0) line = j%2==0 ? line.concat("_") : line.concat("#") ;
+                else line = j%2==0 ? line.concat("#") : line.concat("_") ;
+            }
+            line+="\n";
+        }
+        System.out.println(line);
+    }
+
+
+
+
 
 
 
 
 }
+
