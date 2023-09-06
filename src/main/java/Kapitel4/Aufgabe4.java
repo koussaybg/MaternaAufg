@@ -1,6 +1,7 @@
 package Kapitel4;
 
 import java.sql.SQLOutput;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,13 +11,13 @@ public class Aufgabe4 {
         double rand=Math.random()*10+10 ;
         System.out.println(rand);
 
-        System.out.printf(
-                "<svg height=\"100\" width=\"1000\">\n "
-                        + "<circle cx=\"%d\" cy=\"%d\" r=\"%s\" />\n</svg>\n%n",
-                100, 100, rand );
+//        System.out.printf(
+//                "<svg height=\"100\" width=\"1000\">\n "
+//                        + "<circle cx=\"%d\" cy=\"%d\" r=\"%s\" />\n</svg>\n%n",
+//                100, 100, rand );
 
 
-        Aufgabe142();
+        Aufgabe155();
 
     }
 
@@ -130,10 +131,82 @@ public class Aufgabe4 {
         }
         System.out.println("Value too small to display");
 
+    }
 
+    static void Aufgabe143(){
+        //Math.random() is a pseudo-random number it's better to use SecureRandom()
+        double rand= Math.random() ;
+        if (rand<0.33) System.out.println("<circle cx=\"20\" cy=\"20\" r=\"5\" fill=\"blue\" />");
+        else {
+            if (rand > 0.66) System.out.println("<circle cx=\"20\" cy=\"20\" r=\"5\" fill=\"green\" />");
+            else System.out.println("<circle cx=\"20\" cy=\"20\" r=\"5\" fill=\"green\" />");
+        }
+    }
+
+    static void Aufgabe144(){
+        String[] words={"ay", "aye", "ay, ay", "ja","joo"} ;
+        System.out.println("Enter the word:");
+        String input=new java.util.Scanner(System.in).next();
+        if (Arrays.asList(words).contains(input)) System.out.println("Keep it up!") ;
+        else System.out.println("Don’t you dare!");
 
 
     }
+
+    static void Aufgabe15() {
+        String svg = "<svg height=\"200\" width=\"200\">\n" +
+                " <rect x=\"50\" y=\"50\" width=\"100\" height=\"100\" stroke=\"black\" fill=\"none\"\n" +
+                "       transform=\"rotate(%d 100 100)\" />\n" +
+                "</svg>";
+        for (int i = 0; i < 360; i+=10) {
+            System.out.printf(svg, i);
+        }
+    }
+    static void Aufgabe151(){
+        String svg = "<svg height=\"100\" width=\"1000\">\n" +
+                "%s"+
+                "</svg>" ;
+        String emptystr="" ;
+        for (int i = 0; i < 50; i++) {
+            double random = Math.random();
+            String color = random < 1./3 ? "blue" :
+                    random < 2./3 ? "green" : "orange";
+            emptystr+=String.format("<circle cx=\"20\" cy=\"20\" r=\"5\" fill=\"%s\" />%n",color) ;
+        }
+        System.out.printf(svg,emptystr);
+    }
+    static void Aufgabe153(){
+        int input ;
+        int summe=0;
+        do{
+             input=new java.util.Scanner(System.in).nextInt() ;
+             summe+=input ;
+        }while (input!=0);
+        System.out.println(summe);
+    }
+    static void Aufgabe154(){
+        double t = Math.random() * 10;
+        while (t>0){
+            t = t<1 ? t*2 : --t ;
+            System.out.println(t);
+        }
+
+    }
+    static void Aufgabe155(){
+        int input=new java.util.Scanner(System.in).nextInt() ;
+        int summe=1 ;
+        if (input>=0){
+            for (int i = input; i > 0; i--) {
+                summe*=input-- ;
+            }
+            System.out.println(summe);
+        }
+        else System.out.println("Number must not be negative");
+
+    }
+
+
+
 
 
 }
