@@ -1,10 +1,7 @@
 package Kapitel4;
 
 import java.sql.SQLOutput;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class Aufgabe4 {
     public static void main(String[] args) {
@@ -17,7 +14,7 @@ public class Aufgabe4 {
 //                100, 100, rand );
 
 
-        Aufgabe159();
+        Aufgabe1511();
 
     }
 
@@ -258,6 +255,44 @@ public class Aufgabe4 {
             line+="\n";
         }
         System.out.println(line);
+    }
+    static void Aufgabe1510(){
+        System.out.println("Checkerboard width :");
+        Random rand = new Random();
+        int width = new java.util.Scanner(System.in).nextInt();
+        for (int i = 1; i <= width; i+=2) {
+            for (int index = 0; index < (width/2 - i); index++)
+                System.out.print(" ");
+            if(i>1) {int randomInt=rand.nextInt(1,i) ;
+                for (int j = 0; j < i; j++) {
+
+                    if (j==randomInt)  System.out.print("o") ;
+                    else  System.out.print("*") ;
+                }
+                System.out.println();
+                continue;
+            }
+            System.out.println("*");
+        }//TODO not yet centred
+    }
+
+    static void Aufgabe1511(){
+        System.out.println("repetitions :");
+        int rep = new java.util.Scanner(System.in).nextInt();
+        String fish=" ><> " ;
+        String reversfish=" <>< " ;
+        for (int i = 0; i < rep; i++) {
+            for (int j = 0; j < rep; j++) {
+                System.out.print(fish);
+            }
+            for (int j = 0; j < rep; j++) {
+                System.out.print(reversfish);
+            }
+            System.out.println();
+        }
+    }
+    static void Aufgabe1512(){
+        // a simple brute force approach to crack the cypher , solution could be infinitely large ?
     }
 
 
