@@ -14,7 +14,7 @@ public class Aufgabe4 {
 //                100, 100, rand );
 
 
-        Aufgabe1511();
+        Aufgabe1513();
 
     }
 
@@ -294,6 +294,18 @@ public class Aufgabe4 {
     static void Aufgabe1512(){
         // a simple brute force approach to crack the cypher , solution could be infinitely large ?
     }
+
+    static void Aufgabe1513(){
+        System.out.print("number :");
+        int input = new java.util.Scanner(System.in).nextInt();
+         int number=1 ;
+         while (input/10!=0){
+             number++;
+             input/=10;
+         }
+        System.out.println(number);
+    }
+
 
 
 
